@@ -2,28 +2,64 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>RealDejv | Editor</title>
+<title>RealDejv | Video Editor</title>
 
 <style>
 body {
     margin:0;
-    font-family: Arial;
-    background: linear-gradient(180deg,#0a0a0a,#111);
+    font-family: Arial, sans-serif;
+    background:#0a0a0a;
     color:white;
+}
+
+/* NAVBAR */
+nav {
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    opacity:0.7;
+}
+
+nav a:hover {
+    opacity:1;
+}
+
+/* HERO */
+header {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    background: radial-gradient(circle at center, #111, #000);
 }
 
 h1 {
     font-size:70px;
     color:#8a2be2;
     text-shadow:0 0 20px #8a2be2;
+    animation: fadeIn 1.5s ease;
 }
 
 p {
     color:#aaa;
+    animation: fadeIn 2s ease;
 }
 
 button {
+    margin-top:20px;
     padding:15px 35px;
     background:#8a2be2;
     border:none;
@@ -35,43 +71,71 @@ button {
 }
 
 button:hover {
-    background:#a855f7;
     box-shadow:0 0 20px #8a2be2;
+    transform:scale(1.05);
 }
 
-header {
-    padding:120px 20px;
-}
-
+/* SECTIONS */
 section {
-    padding:60px 20px;
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2 {
+    margin-bottom:30px;
+}
+
+/* VIDEA */
+.videos {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 iframe {
     border-radius:15px;
+}
+
+/* ANIMACE */
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+<div><b>RealDejv</b></div>
+<div>
+<a href="#home">Domů</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+</nav>
+
+<header id="home">
 <h1>RealDejv</h1>
 <p>Gaming Video Editor</p>
-
-<button onclick="alert('Coming soon 🔥')">BUY EDIT PACK</button>
+<button onclick="alert('Coming soon 🔥')">Kontaktuj mě</button>
 </header>
 
-<section>
-<h2>Moje videa</h2>
+<section id="portfolio">
+<h2>Portfolio</h2>
 
-<iframe width="320" height="180"
-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
-</iframe>
+<div class="videos">
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</div>
 
 </section>
 
-<section>
+<section id="kontakt">
 <h2>Kontakt</h2>
 <p>Discord: tvujdiscord</p>
 </section>
