@@ -15,20 +15,22 @@ body {
 /* NAVBAR */
 nav {
     position:fixed;
-    width:100%;
     top:0;
+    width:100%;
     display:flex;
-    justify-content:space-between;
-    padding:20px 40px;
+    justify-content:center;
+    gap:40px;
+    padding:20px;
     background:rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
+    z-index:1000;
 }
 
 nav a {
     color:white;
     text-decoration:none;
-    margin:0 15px;
     opacity:0.7;
+    transition:0.3s;
 }
 
 nav a:hover {
@@ -43,53 +45,56 @@ header {
     justify-content:center;
     align-items:center;
     text-align:center;
-    background: radial-gradient(circle at center, #111, #000);
 }
 
 h1 {
     font-size:70px;
     color:#8a2be2;
     text-shadow:0 0 20px #8a2be2;
-    animation: fadeIn 1.5s ease;
 }
 
-p {
+.subtitle {
     color:#aaa;
-    animation: fadeIn 2s ease;
+    margin-top:10px;
 }
 
-button {
-    margin-top:20px;
-    padding:15px 35px;
-    background:#8a2be2;
-    border:none;
-    border-radius:10px;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+/* IKONKY */
+.icons {
+    margin-top:40px;
+    display:flex;
+    gap:20px;
 }
 
-button:hover {
-    box-shadow:0 0 20px #8a2be2;
-    transform:scale(1.05);
+.circle {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#222;
 }
 
 /* SECTIONS */
 section {
-    padding:80px 20px;
-    text-align:center;
+    padding:100px 20px;
+    max-width:900px;
+    margin:auto;
 }
 
 h2 {
     margin-bottom:30px;
+    text-align:center;
+}
+
+/* TEXT */
+.text {
+    color:#ccc;
+    line-height:1.6;
 }
 
 /* VIDEA */
 .videos {
     display:flex;
-    justify-content:center;
     gap:20px;
+    justify-content:center;
     flex-wrap:wrap;
 }
 
@@ -98,6 +103,10 @@ iframe {
 }
 
 /* ANIMACE */
+header, section {
+    animation: fadeIn 1.2s ease;
+}
+
 @keyframes fadeIn {
     from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0);}
@@ -108,19 +117,36 @@ iframe {
 <body>
 
 <nav>
-<div><b>RealDejv</b></div>
-<div>
 <a href="#home">Domů</a>
+<a href="#about">O mně</a>
 <a href="#portfolio">Portfolio</a>
-<a href="#kontakt">Kontakt</a>
-</div>
+<a href="#social">Sociální sítě</a>
+<a href="#reviews">Recenze</a>
 </nav>
 
 <header id="home">
 <h1>RealDejv</h1>
-<p>Gaming Video Editor</p>
-<button onclick="alert('Coming soon 🔥')">Kontaktuj mě</button>
+<p class="subtitle">Video editor</p>
+
+<div class="icons">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
 </header>
+
+<section id="about">
+<h2>O mně</h2>
+
+<p class="text">
+Editu se věnuju posledních 5 let. Většinu téhle cesty (přes 4,5 roku) jsem piloval cit pro rytmus a dynamiku v CapCutu. I když mě mobilní nástroje časem začaly brzdit, naučily mě vytěžit maximum z minima.
+<br><br>
+Před třemi měsíci jsem definitivně přesedlal na DaVinci Resolve. Tenhle přechod pro mě nebyl začátkem od nuly, ale spíš odbrzděním potenciálu, který jsem si roky budoval. Moje tvorba teď kombinuje letité zkušenosti s neomezenými možnostmi profesionálního softwaru.
+<br><br>
+Tento web je mým prvním velkým projektem v oblasti sebeprezentace. Vznikl za asistence AI a velkou inspirací mi byl styl, který razí PLAYER_CZ. Pokud hledáte edit, který má drive a technickou úroveň, jste na správném místě.
+</p>
+</section>
 
 <section id="portfolio">
 <h2>Portfolio</h2>
@@ -135,9 +161,14 @@ src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
 
 </section>
 
-<section id="kontakt">
-<h2>Kontakt</h2>
-<p>Discord: tvujdiscord</p>
+<section id="social">
+<h2>Sociální sítě</h2>
+<p class="text">Sem potom přidáme YouTube, Instagram atd.</p>
+</section>
+
+<section id="reviews">
+<h2>Recenze</h2>
+<p class="text">Zatím žádné recenze</p>
 </section>
 
 </body>
