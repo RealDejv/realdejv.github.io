@@ -7,12 +7,12 @@
 <style>
 body {
     margin:0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background:#0a0a0a;
     color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     position:fixed;
     top:0;
@@ -35,6 +35,7 @@ nav a {
 
 nav a:hover {
     opacity:1;
+    color:#8a2be2;
 }
 
 /* HERO */
@@ -44,7 +45,6 @@ header {
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
 }
 
 h1 {
@@ -53,23 +53,40 @@ h1 {
     text-shadow:0 0 20px #8a2be2;
 }
 
-.subtitle {
-    color:#aaa;
+/* NAPIŠ MI BOX */
+.contact-box {
+    margin-top:30px;
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(138,43,226,0.2);
+    animation: fadeIn 1.5s ease;
+}
+
+input, textarea {
+    width:100%;
+    padding:12px;
     margin-top:10px;
+    background:#0a0a0a;
+    border:1px solid #333;
+    color:white;
+    border-radius:8px;
 }
 
-/* IKONKY */
-.icons {
-    margin-top:40px;
-    display:flex;
-    gap:20px;
+button {
+    margin-top:15px;
+    padding:12px;
+    width:100%;
+    background:#8a2be2;
+    border:none;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.circle {
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#222;
+button:hover {
+    box-shadow:0 0 20px #8a2be2;
 }
 
 /* SECTIONS */
@@ -79,34 +96,27 @@ section {
     margin:auto;
 }
 
-h2 {
-    margin-bottom:30px;
-    text-align:center;
-}
-
-/* TEXT */
 .text {
     color:#ccc;
-    line-height:1.6;
 }
 
-/* VIDEA */
-.videos {
+/* SOCIAL */
+.socials {
     display:flex;
-    gap:20px;
     justify-content:center;
-    flex-wrap:wrap;
+    gap:30px;
 }
 
-iframe {
-    border-radius:15px;
+.socials img {
+    width:60px;
+    transition:0.3s;
+}
+
+.socials img:hover {
+    transform:scale(1.2);
 }
 
 /* ANIMACE */
-header, section {
-    animation: fadeIn 1.2s ease;
-}
-
 @keyframes fadeIn {
     from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0);}
@@ -126,49 +136,53 @@ header, section {
 
 <header id="home">
 <h1>RealDejv</h1>
-<p class="subtitle">Video editor</p>
+<p>Video editor</p>
 
-<div class="icons">
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
+<!-- NAPIŠ MI -->
+<div class="contact-box">
+
+<form action="https://formspree.io/account" method="POST">
+
+<input type="text" name="name" placeholder="Tvoje jméno" required>
+<input type="email" name="email" placeholder="Tvůj email" required>
+<textarea name="message" placeholder="Zpráva..." required></textarea>
+
+<button type="submit">Odeslat</button>
+
+</form>
+
 </div>
+
 </header>
 
 <section id="about">
 <h2>O mně</h2>
-
 <p class="text">
-Editu se věnuju posledních 5 let. Většinu téhle cesty (přes 4,5 roku) jsem piloval cit pro rytmus a dynamiku v CapCutu. I když mě mobilní nástroje časem začaly brzdit, naučily mě vytěžit maximum z minima.
-<br><br>
-Před třemi měsíci jsem definitivně přesedlal na DaVinci Resolve. Tenhle přechod pro mě nebyl začátkem od nuly, ale spíš odbrzděním potenciálu, který jsem si roky budoval. Moje tvorba teď kombinuje letité zkušenosti s neomezenými možnostmi profesionálního softwaru.
-<br><br>
-Tento web je mým prvním velkým projektem v oblasti sebeprezentace. Vznikl za asistence AI a velkou inspirací mi byl styl, který razí PLAYER_CZ. Pokud hledáte edit, který má drive a technickou úroveň, jste na správném místě.
+Editu se věnuju posledních 5 let... (nech jak máš)
 </p>
 </section>
 
 <section id="portfolio">
 <h2>Portfolio</h2>
-
-<div class="videos">
-<iframe width="300" height="170"
-src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-
-<iframe width="300" height="170"
-src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-</div>
-
+<p class="text">Sem přidáš videa</p>
 </section>
 
 <section id="social">
 <h2>Sociální sítě</h2>
-<p class="text">Sem potom přidáme YouTube, Instagram atd.</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/realdave_org" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+</div>
+
 </section>
 
 <section id="reviews">
 <h2>Recenze</h2>
-<p class="text">Zatím žádné recenze</p>
+<p class="text">Zatím žádné</p>
 </section>
 
 </body>
